@@ -1,0 +1,22 @@
+name: pre-commit
+
+on: [push, pull_request]
+
+jobs:
+  run-pre-commit:
+    runs-on: ubuntu-latest
+
+    steps:
+      - uses: actions/checkout@v3
+
+      - name: Set up Python
+        uses: actions/setup-python@v4
+        with:
+          python-version: '3.10'
+
+      - name: Install pre-commit and dependencies
+        run: |
+          pip install pre-commit black isort
+
+      - name: Run pre-commit hooks
+        run: pre-commit run --all-files
