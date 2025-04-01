@@ -1,21 +1,22 @@
+import copy
+import gc
+import hashlib
+import os
+from enum import Enum
+
+import numpy as np
+import torch
 from monai.metrics import (
+    Cumulative,
     DiceMetric,
     HausdorffDistanceMetric,
     SurfaceDiceMetric,
     SurfaceDistanceMetric,
-    Cumulative,
 )
-from enum import Enum
-
 from torch.nn import functional as F
-import torch
-import numpy as np
-import copy
-import hashlib
-import os
-import gc
 
 from CCMetrics.space_separation import compute_voronoi_regions as space_separation
+
 
 class CCBaseMetric:
 
@@ -255,11 +256,11 @@ class CCBaseMetric:
             assert isinstance(
                 y, np.ndarray
             ), "Input is not a numpy array or torch tensor. Caching is not possible"
-            assert len(y.shape) == 3, "Input shape is not correct. Expected shape: (D,H,W) as input y"
+            assert (
+                len(y.shape) == 3
+            ), "Input shape is not correct. Expected shape: (D,H,W) as input y"
 
-            gt_fingerprint = hashlib.md5(
-                y.tobytes()
-            ).hexdigest()
+            gt_fingerprint = hashlib.md5(y.tobytes()).hexdigest()
             target_path = f"{os.path.join(self.caching_dir, gt_fingerprint)}.npy"
             if os.path.exists(target_path):
                 return

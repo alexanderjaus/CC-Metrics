@@ -34,7 +34,7 @@ The project is available in PyPI. To install, run:
 or perform a local installation.
 
 ## How to use CC-Metrics
-CC-Metrics defines a wrapper around Monai's Cumulative metrics. 
+CC-Metrics defines a wrapper around Monai's Cumulative metrics.
 
 #### Basic Usecase
 
@@ -43,7 +43,7 @@ from CCMetrics import CCDiceMetric
 
 cc_dice = CCDiceMetric(
                        cc_reduction="patient",
-                       use_caching=True, 
+                       use_caching=True,
                        caching_dir=".cache"
                        )
 
@@ -54,7 +54,7 @@ cc_dice(y_pred=y_hat, y=y)
 
 ccdice.cc_aggregate()
 ```
-Explored metrics in the paper include 
+Explored metrics in the paper include
 - CCDiceMetric
 - CCHausdorffDistanceMetric
 - CCHausdorffDistance95Metric
@@ -63,7 +63,7 @@ Explored metrics in the paper include
 
 Unbounded metrics require specifying a worst-case value to replace infinity or NaN, as in
 
-```CCSurfaceDistanceMetric(cc_reduction="overall",  metric_worst_score=30)``` 
+```CCSurfaceDistanceMetric(cc_reduction="overall",  metric_worst_score=30)```
 
 This is necessary, as averaging these metrics would otherwise be undefined.
 
@@ -71,7 +71,7 @@ This is necessary, as averaging these metrics would otherwise be undefined.
 
 The `CCBaseMetric` class supports two types of metric aggregation modes:
 
-1. **Patient-Level Aggregation (`patient`)**: 
+1. **Patient-Level Aggregation (`patient`)**:
   - Computes the mean metric score for each patient by aggregating all connected components within the patient.
   - Returns a list of mean scores, one for each patient.
 
@@ -82,9 +82,9 @@ The `CCBaseMetric` class supports two types of metric aggregation modes:
 The aggregation mode can be specified using the `cc_aggregate` method, with the default mode being `patient`.
 
 #### Caching mechanism
-CC-Metrics requires the computation of a generalized Voronoi diagram which serves as the mapping mechanism between predictions and ground-truth. As the separation of the image space only depends on the ground-truth, the mapping can be cached and reused between intermediate evaluations or across metrics. Even computed in advance to speed up the metric computation. 
+CC-Metrics requires the computation of a generalized Voronoi diagram which serves as the mapping mechanism between predictions and ground-truth. As the separation of the image space only depends on the ground-truth, the mapping can be cached and reused between intermediate evaluations or across metrics. Even computed in advance to speed up the metric computation.
 
-Use the ```use_caching``` flag and provide a caching location. This will compute and cache the voronoi regions when they are computed for the first time. It is recommended to precache these regions allowing for a faster computation on the spot. This can be achieved using the 
+Use the ```use_caching``` flag and provide a caching location. This will compute and cache the voronoi regions when they are computed for the first time. It is recommended to precache these regions allowing for a faster computation on the spot. This can be achieved using the
 ```prepare_caching.py``` script that computes and caches voronoi regions for all ```.nii.gz```images in a given directory.
 
 ```
@@ -107,4 +107,3 @@ If you make use of this project in your work, it would be appreciated if you cit
 ## License
 
 This project is licensed under the [Apache 2.0 License](LICENSE).
-

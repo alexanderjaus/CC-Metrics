@@ -1,9 +1,7 @@
+import cc3d
 import numpy as np
-
 from scipy.ndimage import distance_transform_edt
 from scipy.spatial import cKDTree
-
-import cc3d
 
 
 def compute_voronoi_regions(labels):
