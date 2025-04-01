@@ -8,7 +8,9 @@ CC-Metrics is an evaluation approach for assessing standard evaluation metrics s
 
 Below is an example visualization of the Voronoi-based mapping process:
 
-![Voronoi Mapping Example](resources/title_fig.jpg)
+<div align="center">
+  <img src="resources/title_fig.jpg" alt="Voronoi Mapping Example" style="max-height: 200pt; width: auto;">
+</div>
 
 For more details, you can read the full paper [here](https://arxiv.org/pdf/2410.18684).
 
