@@ -27,11 +27,13 @@ For more details, you can read the full paper [here](https://arxiv.org/pdf/2410.
 
 ## Installation
 
-The project is available in PyPI. To install, run:
+It it generally recommended to first install pytorch and Monai before installing CC-Metrics
 
-```pip install ccmetrics```
-
-or perform a local installation.
+```
+git clone https://github.com/alexanderjaus/CC-Metrics.git
+cd CC-Metrics
+pip install -e .
+```
 
 ## How to use CC-Metrics
 CC-Metrics defines a wrapper around Monai's Cumulative metrics.
