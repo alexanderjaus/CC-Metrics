@@ -20,3 +20,11 @@ jobs:
 
       - name: Run pre-commit hooks
         run: pre-commit run --all-files
+
+      - name: Install pytest and project dependencies
+        run: |
+          pip install pytest
+          pip install -e .
+
+      - name: Run pytest
+        run: pytest tests/ -v
