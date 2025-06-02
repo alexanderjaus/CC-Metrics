@@ -98,11 +98,14 @@ python prepare_caching.py --gt <Ground truth directory> --cache_dir <caching dir
 
 If you make use of this project in your work, it would be appreciated if you cite the cc-metrics paper
 ```
-@article{jaus2024every,
+@inproceedings{jaus2025every,
   title={Every Component Counts: Rethinking the Measure of Success for Medical Semantic Segmentation in Multi-Instance Segmentation Tasks},
-  author={Jaus, Alexander and Seibold, Constantin and Rei{\ss}, Simon and Marinov, Zdravko and Li, Keyi and Ye, Zeling and Krieg, Stefan and Kleesiek, Jens and Stiefelhagen, Rainer},
-  journal={arXiv preprint arXiv:2410.18684},
-  year={2024}
+  author={Jaus, Alexander and Seibold, Constantin Marc and Rei{\ss}, Simon and Marinov, Zdravko and Li, Keyi and Ye, Zeling and Krieg, Stefan and Kleesiek, Jens and Stiefelhagen, Rainer},
+  booktitle={Proceedings of the AAAI Conference on Artificial Intelligence},
+  volume={39},
+  number={4},
+  pages={3904--3912},
+  year={2025}
 }
 ```
 
