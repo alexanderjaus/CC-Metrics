@@ -220,32 +220,25 @@ def test_cc_dice_aggregation_modes(
         use_caching=True, caching_dir=cache_dir, cc_reduction="overall"
     )
 
-    # Process all patients
-    patient_scores = []
-    all_component_scores = []
-
     for y, y_hat in zip(y_list, y_hat_list):
-        # Get per-patient scores
         metric_patient(y_pred=y_hat, y=y)
-        patient_score = metric_patient.cc_aggregate().mean().item()
-        patient_scores.append(patient_score)
-
-        # Get per-component scores
         metric_overall(y_pred=y_hat, y=y)
-        component_scores = metric_overall.cc_aggregate().tolist()
-        all_component_scores.extend(component_scores)
+
+    # Get per-patient scores
+    patient_scores = metric_patient.cc_aggregate().tolist()
+
+    # Get per-component scores
+    component_scores = metric_overall.cc_aggregate().tolist()
 
     print(f"Patient-level scores: {patient_scores}")
-    print(f"Component-level scores: {all_component_scores}")
+    print(f"Component-level scores: {component_scores}")
 
     # Test 1: Verify aggregation behavior
     assert len(patient_scores) == 2, "Should have one score per patient"
-    assert len(all_component_scores) > len(
-        patient_scores
-    ), "Should have more component scores than patients"
+    assert len(component_scores) == 3, "Should have one score per component"
 
     # Test 2: Verify numerical correctness
     assert all(
         abs(score - expected_dice) < tolerance
-        for score in patient_scores + all_component_scores
+        for score in patient_scores + component_scores
     ), "All scores should match theoretical value"
