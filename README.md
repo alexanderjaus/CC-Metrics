@@ -36,6 +36,14 @@ For more details, you can read the full paper [here](https://arxiv.org/pdf/2410.
 
 ## Installation
 
+You may install CC-Metrics simply by running
+
+```bash
+pip install CCMetrics
+```
+
+Another option is the editable installation directly from the source code:
+
 ### Prerequisites
 
 - Python 3.8+
