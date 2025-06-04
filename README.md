@@ -1,7 +1,7 @@
 # CC-Metrics
 ## Every Component Counts: Rethinking the Measure of Success for Medical Semantic Segmentation in Multi-Instance Segmentation Tasks
 
-[![Paper](https://img.shields.io/badge/PDF-Paper-green.svg)](https://arxiv.org/pdf/2410.18684) [![License](https://img.shields.io/badge/License-Apache_2.0-blue.svg)](LICENSE) [![Python 3.8+](https://img.shields.io/badge/python-3.8+-blue.svg)](https://www.python.org/downloads/) [![YouTube](https://img.shields.io/badge/YouTube-Video-red.svg)](https://www.youtube.com/watch?v=VBiXteZkSHs)
+[![Paper](https://img.shields.io/badge/PDF-Paper-green.svg)](https://arxiv.org/pdf/2410.18684) [![License](https://img.shields.io/badge/License-Apache_2.0-blue.svg)](LICENSE) [![Python 3.8+](https://img.shields.io/badge/python-3.8+-blue.svg)](https://www.python.org/downloads/) [![YouTube](https://img.shields.io/badge/YouTube-Video-red.svg)](https://www.youtube.com/watch?v=VBiXteZkSHs) [![PyPI Downloads](https://static.pepy.tech/badge/ccmetrics)](https://pepy.tech/projects/ccmetrics)
 
 
 ## Description
